@@ -15,20 +15,28 @@ public class LiveStream implements Serializable {
         switch(pom){
             case 0:
                 nazwa="Epica: ";
+                break;
             case 1:
                 nazwa="Nightwish: ";
+                break;
             case 2:
                 nazwa="Within Temptation: ";
+                break;
             case 3:
                 nazwa="XIII Stoleti: ";
+                break;
             case 4:
                 nazwa="Iron Maiden: ";
+                break;
             case 5:
                 nazwa="Hatsune Miku: ";
+                break;
             case 6:
                 nazwa="Rammstein: ";
+                break;
             case 7:
                 nazwa="Sabaton: ";
+                break;
             case 8:
                 nazwa="Xandria: ";
         }
@@ -36,26 +44,37 @@ public class LiveStream implements Serializable {
         switch(pom){
             case 0:
                 nazwa=nazwa+"Londyn";
+                break;
             case 1:
                 nazwa=nazwa+"Poznan";
+                break;
             case 2:
                 nazwa=nazwa+"Berlin";
+                break;
             case 3:
                 nazwa=nazwa+"Tokio";
+                break;
             case 4:
                 nazwa=nazwa+"Paryz";
+                break;
             case 5:
                 nazwa=nazwa+"Amsterdam";
+                break;
             case 6:
                 nazwa=nazwa+"Oslo";
+                break;
             case 7:
                 nazwa=nazwa+"Praga";
+                break;
             case 8:
                 nazwa=nazwa+"Moskwa";
+                break;
             case 9:
                 nazwa=nazwa+"Wieden";
+                break;
             case 10:
                 nazwa=nazwa+"Sztokholm";
+                break;
             case 11:
                 nazwa=nazwa+"Helsinki";
         }
@@ -65,6 +84,6 @@ public class LiveStream implements Serializable {
 
     @Override
     public String toString() {
-        return "LiveStream{" + "nazwa=" + nazwa + ", cena=" + cena + '}';
+        return "LiveStream{" + nazwa + "," + cena + '}';
     }
 }

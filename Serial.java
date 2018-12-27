@@ -19,11 +19,15 @@ public class Serial extends Ogladadlo implements Serializable {
     public Serial(String nazwa, int rok, double ocena, String gatunek, double cena) {
         super(nazwa, rok, ocena, gatunek, cena);
         sezony = new ArrayList<>();
+        sezony.add(new sezon());
+        odcinkiSpecjalne=new ArrayList<>();
     }
 
     public Serial(){
         super();
         sezony=new ArrayList<>();
+        sezony.add(new sezon());
+        odcinkiSpecjalne=new ArrayList<>();
     }
 
     public void dodajsezon(){

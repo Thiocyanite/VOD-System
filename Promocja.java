@@ -27,7 +27,7 @@ public class Promocja implements Serializable {
 
     @Override
     public String toString() {
-        return "Promocja{" + "tydzienRozpoczecia=" + tydzienRozpoczecia + ", tydzienZakonczenia=" + tydzienZakonczenia + ", upust=" + upust + '}';
+        return "Promocja{" +  tydzienRozpoczecia + "," + tydzienZakonczenia + ", " + upust + '}';
     }
 
 }

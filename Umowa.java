@@ -6,6 +6,7 @@ public class  Umowa implements Serializable {
     private String typ;
     private int czas;
     private int zyski;
+    private int odtworzenia;
 
     public Umowa(){
         Random generator= new Random();
@@ -16,11 +17,13 @@ public class  Umowa implements Serializable {
         }
         else
             typ="Odtworzenia";
+            odtworzenia=0;
+            zyski=6;
     }
 
     @Override
     public String toString() {
-        return "Umowa{" + "typ=" + typ + ", czas=" + czas + ", zyski=" + zyski + '}';
+        return "Umowa{"  + typ + ", " + czas + ", " + zyski + '}';
     }
 
 
