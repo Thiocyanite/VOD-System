@@ -12,6 +12,7 @@ public class Ogladadlo implements Serializable {
     private double ocena;
     private ArrayList<String> listaAktorow;
     private double cena;
+    private int wyswietleniaTydzien;
     private ArrayList wyswietlenia;
 
     public String toString(){
@@ -30,6 +31,7 @@ public class Ogladadlo implements Serializable {
     }
     public Ogladadlo(){
         Random generator = new Random();
+        wyswietleniaTydzien=0;
         int ster= generator.nextInt(6);
         switch (ster){
             case 0:
@@ -191,5 +193,11 @@ public class Ogladadlo implements Serializable {
         }
         this.rokProdukcji=1980+generator.nextInt(39);
         this.wyswietlenia=new ArrayList<>();
+        this.krajeProdukcji=new ArrayList<>();
+        krajeProdukcji.add("USA");
+        krajeProdukcji.add("Japonia");
+        krajeProdukcji.add("Polska");
+        this.listaAktorow=new ArrayList<>();
+        listaAktorow.add("Johny Depp");
     }
 }
