@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static java.lang.Thread.sleep;
 
 
 public class Klient implements Serializable {
@@ -40,6 +41,29 @@ public class Klient implements Serializable {
         abonament=new Abonament();
         systemik.wplac(abonament.getCena());
         waznoscAbonamentu=4;
+    }
+
+
+    public void ogladaj(){
+        Random generator = new Random();
+        int wait=generator.nextInt(900), obejrz=generator.nextInt(5);
+        try {
+            sleep(wait);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (obejrz>3)
+        {obejrz=generator.nextInt(systemik.live.size());
+            systemik.live.get(obejrz).dodajWyswietlenia();
+            systemik.wplac(systemik.live.get(obejrz).getcena());
+        }
+        else {
+            obejrz=generator.nextInt(systemik.ogladane.size());
+            systemik.ogladane.get(obejrz).dodajwyswietlenie();
+            if (abonament==null || waznoscAbonamentu<1)
+                systemik.wplac(systemik.ogladane.get(obejrz).getCena());
+        }
+
     }
 
 }

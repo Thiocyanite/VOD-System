@@ -17,7 +17,7 @@ public class Ogladadlo implements Serializable {
     private Dystrybutor dystrybutor;
 
     public String toString(){
-        return nazwa+","+gatunek+","+rokProdukcji+","+krajeProdukcji+","+ocena+","+listaAktorow+","+cena+","+wyswietlenia;
+        return nazwa+","+gatunek+","+rokProdukcji+","+krajeProdukcji+","+ocena+","+listaAktorow+","+cena+","+wyswietlenia+","+wyswietleniaTydzien;
     }
 
     public void prezentujsie(){};
@@ -201,6 +201,10 @@ public class Ogladadlo implements Serializable {
         krajeProdukcji.add("Polska");
         this.listaAktorow=new ArrayList<>();
         listaAktorow.add("Johny Depp");
+    }
+
+    public double getCena(){
+        return this.cena;
     }
 
     public void dodajwyswietlenie(){

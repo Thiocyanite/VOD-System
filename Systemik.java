@@ -2,13 +2,13 @@ package com.company;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
+
 
 public class Systemik  implements Serializable {
-     Collection<Klient> uzyskodniki;
-     Collection<Dystrybutor> dystrybutorzy;
-     Collection<Ogladadlo> ogladane;
-     Collection<LiveStream> live;
+     ArrayList<Klient> uzyskodniki;
+     ArrayList<Dystrybutor> dystrybutorzy;
+     ArrayList<Ogladadlo> ogladane;
+     ArrayList<LiveStream> live;
     private double stanKonta;
     private double saldo;
     private int tydzien;

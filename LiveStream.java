@@ -6,11 +6,13 @@ public class LiveStream implements Serializable {
     private String nazwa;
     private double cena;
     private int data;
+    private int wyswietlenia;
     private Dystrybutor dystrybutor;
     private Promocja aktualnaPromocja;
 
     public LiveStream(int data, Dystrybutor dystrybutor) {
         Random generator = new Random();
+        wyswietlenia=0;
         this.dystrybutor=dystrybutor;
         this.data = data + generator.nextInt(120);
         cena=50+generator.nextInt(191)*5; //between 50 and 1k
@@ -99,6 +101,9 @@ public class LiveStream implements Serializable {
         return this.cena*(1-aktualnaPromocja.getUpust());
     }
 
+    public void dodajWyswietlenia(){
+        wyswietlenia++;
+    }
     @Override
     public String toString() {
         return "LiveStream{" + nazwa + "," + cena + '}';

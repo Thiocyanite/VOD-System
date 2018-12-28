@@ -10,6 +10,8 @@ public class Main {
         dystrybutor1.produkuj();
         dystrybutor.produkuj();
         dystrybutor.produkuj();
+        Klient klient=new Klient(systemik);
+        klient.ogladaj();
         System.out.println(systemik);
 
     }
