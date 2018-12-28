@@ -8,10 +8,12 @@ import static java.lang.Thread.sleep;
 
 
 public class Dystrybutor implements Serializable {
-    private Umowa aktualnaUmowa;
+     Umowa aktualnaUmowa;
     private int czasDoNowejUmowy;
     private String nazwa;
     Systemik systemik;
+
+
 
     public Dystrybutor(Systemik systemik, String nazwa){
         this.nazwa=nazwa;

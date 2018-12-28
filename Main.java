@@ -7,11 +7,15 @@ public class Main {
         Systemik systemik=new Systemik();
         Dystrybutor dystrybutor=new Dystrybutor(systemik, "Nuclear Blast");
         Dystrybutor dystrybutor1=new Dystrybutor(systemik,"Best");
-        dystrybutor1.produkuj();
-        dystrybutor.produkuj();
-        dystrybutor.produkuj();
         Klient klient=new Klient(systemik);
-        klient.ogladaj();
+        System.out.println(systemik);
+        System.out.println(systemik.tydzien());
+        System.out.println(systemik.tydzien());
+        System.out.println(systemik.tydzien());
+        Klient klient1=new Klient(systemik);
+        System.out.println(systemik.tydzien());
+        System.out.println(systemik.tydzien());
+        System.out.println(systemik.tydzien());
         System.out.println(systemik);
 
     }

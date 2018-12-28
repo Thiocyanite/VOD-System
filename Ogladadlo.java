@@ -20,7 +20,7 @@ public class Ogladadlo implements Serializable {
         return nazwa+","+gatunek+","+rokProdukcji+","+krajeProdukcji+","+ocena+","+listaAktorow+","+cena+","+wyswietlenia+","+wyswietleniaTydzien;
     }
 
-    public void prezentujsie(){};
+
     public Ogladadlo(String nazwa, int rok, double ocena, String gatunek, double cena, Dystrybutor dystrybutor){
         this.nazwa=nazwa;
         this.gatunek=gatunek;
@@ -30,10 +30,13 @@ public class Ogladadlo implements Serializable {
         krajeProdukcji=new ArrayList();
         listaAktorow=new ArrayList<>();
         wyswietlenia=new ArrayList();
+        wyswietleniaTydzien=0;
     }
     public Ogladadlo(Dystrybutor dystrybutor){
         Random generator = new Random();
+        this.dystrybutor=dystrybutor;
         wyswietleniaTydzien=0;
+        ocena=generator.nextInt(10);
         int ster= generator.nextInt(6);
         switch (ster){
             case 0:
@@ -194,7 +197,7 @@ public class Ogladadlo implements Serializable {
                 break;}
         }
         this.rokProdukcji=1980+generator.nextInt(39);
-        this.wyswietlenia=new ArrayList<>();
+        this.wyswietlenia=new ArrayList();
         this.krajeProdukcji=new ArrayList<>();
         krajeProdukcji.add("USA");
         krajeProdukcji.add("Japonia");
@@ -208,11 +211,14 @@ public class Ogladadlo implements Serializable {
     }
 
     public void dodajwyswietlenie(){
-        wyswietleniaTydzien++;
+        wyswietleniaTydzien=wyswietleniaTydzien+1;
     }
+
+
 
     public void zmianaTygodnia(){
         wyswietlenia.add(wyswietleniaTydzien);
+        dystrybutor.aktualnaUmowa.dodajodtworzenia(wyswietleniaTydzien);
         wyswietleniaTydzien=0;
     }
 

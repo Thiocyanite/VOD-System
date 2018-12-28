@@ -104,6 +104,17 @@ public class LiveStream implements Serializable {
     public void dodajWyswietlenia(){
         wyswietlenia++;
     }
+
+    public void wyswietlenia(){
+        dystrybutor.aktualnaUmowa.dodajodtworzenia(wyswietlenia);
+    }
+
+    public boolean aktualny(int tydzien){
+        if (this.data<tydzien) return false;
+        return true;
+
+    }
+
     @Override
     public String toString() {
         return "LiveStream{" + nazwa + "," + cena + '}';

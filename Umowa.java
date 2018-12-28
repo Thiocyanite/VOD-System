@@ -9,7 +9,7 @@ public class  Umowa implements Serializable {
 
     public Umowa(){
         Random generator= new Random();
-
+        odtworzenia=0;
 
         if (generator.nextInt(2)==1){
             typ="Ryczalt";
@@ -17,7 +17,7 @@ public class  Umowa implements Serializable {
         }
         else
             typ="Odtworzenia";
-            odtworzenia=0;
+
             zyski=6;
     }
 
