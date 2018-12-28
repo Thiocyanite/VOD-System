@@ -6,9 +6,12 @@ public class LiveStream implements Serializable {
     private String nazwa;
     private double cena;
     private int data;
+    private Dystrybutor dystrybutor;
+    private Promocja aktualnaPromocja;
 
-    public LiveStream(int data) {
+    public LiveStream(int data, Dystrybutor dystrybutor) {
         Random generator = new Random();
+        this.dystrybutor=dystrybutor;
         this.data = data + generator.nextInt(120);
         cena=50+generator.nextInt(191)*5; //between 50 and 1k
         int pom = generator.nextInt(9);
@@ -81,6 +84,20 @@ public class LiveStream implements Serializable {
 
     }
 
+
+    public void dodajPromocje(int tyg){
+        aktualnaPromocja=new Promocja(tyg);
+    }
+
+    public void usunPromocje(){
+        aktualnaPromocja=null;
+    }
+
+    public double getcena(){
+        if (aktualnaPromocja==null)
+            return this.cena;
+        return this.cena*(1-aktualnaPromocja.getUpust());
+    }
 
     @Override
     public String toString() {

@@ -4,8 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
         String s;
-        Dystrybutor dystrybutor=new Dystrybutor("Nuclear Blast");
-        System.out.println(dystrybutor);
+        Systemik systemik=new Systemik();
+        Dystrybutor dystrybutor=new Dystrybutor(systemik, "Nuclear Blast");
+        Dystrybutor dystrybutor1=new Dystrybutor(systemik,"Best");
+        dystrybutor1.produkuj();
+        dystrybutor.produkuj();
+        dystrybutor.produkuj();
+        System.out.println(systemik);
 
     }
 }

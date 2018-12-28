@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Systemik  implements Serializable {
-    private Collection<Klient> uzyskodniki;
-    private Collection<Dystrybutor> dystrybutorzy;
-    private Collection<Ogladadlo> ogladane;
-    private Collection<LiveStream> live;
+     Collection<Klient> uzyskodniki;
+     Collection<Dystrybutor> dystrybutorzy;
+     Collection<Ogladadlo> ogladane;
+     Collection<LiveStream> live;
     private double stanKonta;
     private double saldo;
     private int tydzien;
@@ -22,6 +22,17 @@ public class Systemik  implements Serializable {
         saldo=0;
         tydzien=0;
     }
+
+    public void wyplac(double zabrane){
+        stanKonta-=zabrane;
+        saldo-=zabrane;
+    }
+
+    public void wplac(double zysk){
+        stanKonta+=zysk;
+        saldo+=zysk;
+    }
+
 
     @Override
     public String toString() {

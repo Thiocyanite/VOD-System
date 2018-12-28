@@ -11,25 +11,27 @@ public class Ogladadlo implements Serializable {
     private ArrayList<String> krajeProdukcji;
     private double ocena;
     private ArrayList<String> listaAktorow;
-    private double cena;
+     double cena;
     private int wyswietleniaTydzien;
     private ArrayList wyswietlenia;
+    private Dystrybutor dystrybutor;
 
     public String toString(){
         return nazwa+","+gatunek+","+rokProdukcji+","+krajeProdukcji+","+ocena+","+listaAktorow+","+cena+","+wyswietlenia;
     }
 
     public void prezentujsie(){};
-    public Ogladadlo(String nazwa, int rok, double ocena, String gatunek, double cena){
+    public Ogladadlo(String nazwa, int rok, double ocena, String gatunek, double cena, Dystrybutor dystrybutor){
         this.nazwa=nazwa;
         this.gatunek=gatunek;
         this.rokProdukcji=rok;
         this.cena=cena;
+        this.dystrybutor=dystrybutor;
         krajeProdukcji=new ArrayList();
         listaAktorow=new ArrayList<>();
         wyswietlenia=new ArrayList();
     }
-    public Ogladadlo(){
+    public Ogladadlo(Dystrybutor dystrybutor){
         Random generator = new Random();
         wyswietleniaTydzien=0;
         int ster= generator.nextInt(6);
@@ -200,4 +202,14 @@ public class Ogladadlo implements Serializable {
         this.listaAktorow=new ArrayList<>();
         listaAktorow.add("Johny Depp");
     }
+
+    public void dodajwyswietlenie(){
+        wyswietleniaTydzien++;
+    }
+
+    public void zmianaTygodnia(){
+        wyswietlenia.add(wyswietleniaTydzien);
+        wyswietleniaTydzien=0;
+    }
+
 }

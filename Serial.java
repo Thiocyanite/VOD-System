@@ -8,6 +8,7 @@ import java.util.Random;
 public class Serial extends Ogladadlo implements Serializable {
     private ArrayList<sezon> sezony;
     private ArrayList<odcinek> odcinkiSpecjalne;
+    private Dystrybutor dystrybutor;
 
 
     @Override
@@ -16,15 +17,15 @@ public class Serial extends Ogladadlo implements Serializable {
     }
 
 
-    public Serial(String nazwa, int rok, double ocena, String gatunek, double cena) {
-        super(nazwa, rok, ocena, gatunek, cena);
+    public Serial(String nazwa, int rok, double ocena, String gatunek, double cena, Dystrybutor dystrybutor) {
+        super(nazwa, rok, ocena, gatunek, cena, dystrybutor);
         sezony = new ArrayList<>();
         sezony.add(new sezon());
         odcinkiSpecjalne=new ArrayList<>();
     }
 
-    public Serial(){
-        super();
+    public Serial(Dystrybutor dystrybutor){
+        super(dystrybutor);
         sezony=new ArrayList<>();
         sezony.add(new sezon());
         odcinkiSpecjalne=new ArrayList<>();
