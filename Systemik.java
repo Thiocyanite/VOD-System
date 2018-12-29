@@ -5,16 +5,19 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-public class Systemik  implements Serializable {
+public class Systemik extends Thread implements Serializable {
      ArrayList<Klient> uzyskodniki;
      ArrayList<Dystrybutor> dystrybutorzy;
      ArrayList<Ogladadlo> ogladane;
      ArrayList<LiveStream> live;
     private double stanKonta;
     private double saldo;
-    private int tydzien;
+    double saldoPoMiesiacu;
+    int tydzien;
+    Symulacja symulacja;
 
-    public Systemik(){
+    public Systemik(Symulacja symulacja){
+        this.symulacja=symulacja;
         uzyskodniki=new ArrayList();
         dystrybutorzy=new ArrayList<>();
         ogladane=new ArrayList<>();
@@ -34,38 +37,46 @@ public class Systemik  implements Serializable {
         saldo+=zysk;
     }
 
-    public double tydzien(){
-        tydzien++;
-        Random generator = new Random();
-        for (int i=0; i<uzyskodniki.size();i++){
-            if (generator.nextInt(10)>9)
-                uzyskodniki.get(i).kupAbonament();
-        }
-        int pom=generator.nextInt(ogladane.size()+live.size());
-        for (int i=0;i<pom;i++){
-            Klient klient=new Klient(this);
-            uzyskodniki.add(klient);
-        }
+    public void tydzien(){
+        try {
+            symulacja.pisarz.acquire();
+            symulacja.czytelnik.acquire(30);
+            if(tydzien%4==0)
+                saldoPoMiesiacu=0;
+            tydzien++;
 
-        for (int i=0; i<dystrybutorzy.size();i++){
-
-            dystrybutorzy.get(i).rozliczenie();
-        }
-
-        for (int i=0; i<live.size();i++){
-            live.get(i).wyswietlenia();
-            if (live.get(i).aktualny(tydzien)==false){
-                live.remove(i);
+            Random generator = new Random();
+            for (int i=0; i<uzyskodniki.size();i++){
+                uzyskodniki.get(i).tygodniuj();
+                if (generator.nextInt(10)>8)
+                    uzyskodniki.get(i).kupAbonament();
             }
-        }
-        for (int i=0; i<ogladane.size();i++){
-            ogladane.get(i).zmianaTygodnia();
-        }
+            int pom=generator.nextInt((ogladane.size()+live.size()+1));
+            for (int i=0;i<pom;i++){
+                Klient klient=new Klient(this);
+                uzyskodniki.add(klient);
+            }
 
-        if (tydzien%4==0){
-            return saldo;
-        }
-        else return 0;
+            for (int i=0; i<dystrybutorzy.size();i++){
+                dystrybutorzy.get(i).rozliczenie();
+            }
+
+            for (int i=0; i<live.size();i++){
+                live.get(i).wyswietlenia();
+                if (live.get(i).aktualny(tydzien)==false){
+                    live.remove(i);
+                }
+            }
+            for (int i=0; i<ogladane.size();i++){
+                ogladane.get(i).zmianaTygodnia();
+            }
+
+            saldoPoMiesiacu+=saldo;
+            symulacja.czytelnik.release(30);
+            symulacja.pisarz.release(1);
+        } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
     }
 
     @Override

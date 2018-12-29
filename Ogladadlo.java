@@ -211,7 +211,7 @@ public class Ogladadlo implements Serializable {
     }
 
     public void dodajwyswietlenie(){
-        wyswietleniaTydzien=wyswietleniaTydzien+1;
+        synchronized (this) {wyswietleniaTydzien=wyswietleniaTydzien+1;}
     }
 
 

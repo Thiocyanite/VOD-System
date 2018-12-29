@@ -1,13 +1,13 @@
 package com.company;
 
-import java.io.RandomAccessFile;
+
 import java.io.Serializable;
 import java.util.Random;
 
-import static java.lang.Thread.sleep;
 
 
-public class Dystrybutor implements Serializable {
+
+public class Dystrybutor extends Thread implements Serializable {
      Umowa aktualnaUmowa;
     private int czasDoNowejUmowy;
     private String nazwa;
@@ -21,6 +21,7 @@ public class Dystrybutor implements Serializable {
         systemik.dystrybutorzy.add(this);
         czasDoNowejUmowy=4;
         aktualnaUmowa = new Umowa();
+        this.start();
     }
 
     public void wyprodukujFilm(){
@@ -39,23 +40,30 @@ public class Dystrybutor implements Serializable {
     }
 
 
-    public void produkuj(){
+    public void run(){
         Random generator = new Random();
-        int wait=generator.nextInt(9000), produce=generator.nextInt(3);
-        try {
-            sleep(wait);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        switch (produce){
-            case 0:
-                wyprodukujFilm();
-                break;
-            case 1:
-                wyprodukujSerial();
-                break;
-            case 2:
-                wyprodukujLive();
+        while (true){
+
+            try {
+                int wait=generator.nextInt(9000), produce=generator.nextInt(3);
+                sleep(wait);
+                systemik.symulacja.pisarz.acquire(1);
+                systemik.symulacja.pisarz.release(1);
+                systemik.symulacja.czytelnik.acquire(1);
+                switch (produce){
+                    case 0:
+                        wyprodukujFilm();
+                        break;
+                    case 1:
+                        wyprodukujSerial();
+                        break;
+                    case 2:
+                        wyprodukujLive();
+                }
+                systemik.symulacja.czytelnik.release(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
     }
