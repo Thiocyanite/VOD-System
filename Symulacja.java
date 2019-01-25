@@ -42,7 +42,7 @@ public class Symulacja implements Serializable {
     }
 
     public void odczyt(){
-        String nazwaPliku="/$HOME/.projekt/ser.txt";
+        String nazwaPliku="ser.txt";
 
         try {
             ObjectInputStream in = new ObjectInputStream(
@@ -61,7 +61,7 @@ public class Symulacja implements Serializable {
 
 
     public void zapis(){
-        String nazwaPliku="/$HOME/.projekt/ser.txt";
+        String nazwaPliku="ser.txt";
         try {
             ObjectOutputStream out = new ObjectOutputStream(
                     new BufferedOutputStream(

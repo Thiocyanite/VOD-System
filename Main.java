@@ -15,6 +15,7 @@ public class Main {
         symulacja.dodajDystrybutora("kk");
         }
     System.out.println(symulacja.vod.toString());
+
     }
 
 }

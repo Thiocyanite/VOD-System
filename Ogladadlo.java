@@ -221,5 +221,4 @@ public class Ogladadlo implements Serializable {
         dystrybutor.aktualnaUmowa.dodajodtworzenia(wyswietleniaTydzien);
         wyswietleniaTydzien=0;
     }
-
 }

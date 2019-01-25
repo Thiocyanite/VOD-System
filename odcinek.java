@@ -34,5 +34,4 @@ public class odcinek implements Serializable{
         return czasDoOgladaniaPoZakupie;
     }
 
-
 }
