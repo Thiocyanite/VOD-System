@@ -44,7 +44,7 @@ public class Main extends Application {
         try {
 
             Parent root = FXMLLoader.load(getClass().getResource("gui1.fxml"));
-            scenaGlowna = new Scene(root, 600,400);
+            scenaGlowna = new Scene(root, 1000,600);
         } catch (IOException e) {
             e.printStackTrace();
         }

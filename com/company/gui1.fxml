@@ -51,6 +51,10 @@
       <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="600.0" prefWidth="443.0" style="-fx-background-color: #000000;">
         <children>
 
+            <ListView fx:id="listaDystrybutorow" layoutX="15.0" layoutY="315.0" prefHeight="200.0" prefWidth="174.0" style="-fx-background-color: #800080;" />
+            <ListView fx:id="listaOgladanych" layoutX="15.0" layoutY="76.0" prefHeight="200.0" prefWidth="174.0" style="-fx-background-color: #800080;" />
+            <ListView fx:id="listaLivow" layoutX="222.0" layoutY="76.0" prefHeight="200.0" prefWidth="174.0" style="-fx-background-color: #800080;" />
+            <ListView fx:id="listaUzyszkodnikow" layoutX="222.0" layoutY="315.0" prefHeight="200.0" prefWidth="174.0" style="-fx-background-color: #800080;" />
                   <Label layoutX="15.0" layoutY="53.0" prefHeight="23.0" prefWidth="174.0" style="-fx-background-color: #800080; -fx-text-fill: #ffffff;" text="Nasze filmy i seriale" />
                   <Label layoutX="15.0" layoutY="292.0" prefHeight="23.0" prefWidth="174.0" style="-fx-background-color: #800080; -fx-text-fill: #ffffff;" text="Nasi dystrybutorzy" />
                   <Label layoutX="223.0" layoutY="53.0" prefHeight="23.0" prefWidth="174.0" style="-fx-background-color: #800080; -fx-text-fill: #ffffff;" text="Nasze live'y" />
