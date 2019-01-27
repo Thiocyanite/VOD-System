@@ -5,9 +5,21 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
-import javax.print.DocFlavor;
-import javax.swing.text.html.ListView;
-import java.awt.*;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleListProperty;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.chart.LineChart;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+
+import java.net.URL;
+import java.util.*;
+
+import static com.company.Main.symulacja;
+
 
 public class Controller {
 
@@ -41,6 +53,20 @@ public class Controller {
 
 
     public Controller(){}
+
+    public void initialize(){
+        listaDystrybutorow.itemsProperty().bind(listaDystrybutorowProperty);
+        listaDystrybutorowProperty.set(symulacja.vod.dystrybutorzy);
+
+        listaLivow.itemsProperty().bind(listaLivowProperty);
+        listaLivowProperty.set(symulacja.vod.live);
+
+        listaOgladanych.itemsProperty().bind(listaOgladanychProperty);
+        listaOgladanychProperty.set(symulacja.vod.ogladane);
+
+        listaUzyszkodnikow.itemsProperty().bind(listaUzyszkodnikowProperty);
+        listaUzyszkodnikowProperty.set(symulacja.vod.uzyskodniki);
+    }
 
     public void wyswietlLive(LiveStream live){
     nazwa.setText(live.getNazwa());

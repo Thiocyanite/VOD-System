@@ -3,9 +3,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller">
    <children>
       <Label layoutX="14.0" prefHeight="70.0" prefWidth="130.0" style="-fx-text-fill: #ffffff;" text="Nazwa:">
          <font>
@@ -32,5 +32,30 @@
             <Font name="Zapfino" size="14.0" />
          </font>
       </Label>
+      <Text layoutX="315.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nazwa">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="315.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%data">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="321.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%eMail">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="332.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nrKarty">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="341.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%abonament">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

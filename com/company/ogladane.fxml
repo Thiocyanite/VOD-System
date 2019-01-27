@@ -9,8 +9,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller">
    <children>
       <LineChart layoutX="361.0" layoutY="210.0" prefHeight="183.0" prefWidth="210.0">
         <xAxis>
@@ -57,5 +58,35 @@
             <Image url="@Unknown.jpeg" />
          </image>
       </ImageView>
+      <Text layoutX="221.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nazwa">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="221.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%gatunek">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="221.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%rokProdukcji">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="228.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%dystrybutor">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="233.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%cena">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="239.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%coena" wrappingWidth="76.86249925754964">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
