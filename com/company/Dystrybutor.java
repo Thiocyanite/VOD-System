@@ -9,6 +9,19 @@ import java.util.Random;
 
 public class Dystrybutor extends Thread implements Serializable {
      Umowa aktualnaUmowa;
+
+    public Umowa getAktualnaUmowa() {
+        return aktualnaUmowa;
+    }
+
+    public int getCzasDoNowejUmowy() {
+        return czasDoNowejUmowy;
+    }
+
+    public int getZarobione() {
+        return zarobione;
+    }
+
     private int czasDoNowejUmowy;
     private String nazwa;
     private int zarobione;

@@ -10,6 +10,43 @@ public class Ogladadlo implements Serializable {
     private int rokProdukcji;
     private ArrayList<String> krajeProdukcji;
     private double ocena;
+
+    public String getNazwa() {
+        return nazwa;
+    }
+
+    public String getGatunek() {
+        return gatunek;
+    }
+
+    public int getRokProdukcji() {
+        return rokProdukcji;
+    }
+
+    public ArrayList<String> getKrajeProdukcji() {
+        return krajeProdukcji;
+    }
+
+    public double getOcena() {
+        return ocena;
+    }
+
+    public ArrayList<String> getListaAktorow() {
+        return listaAktorow;
+    }
+
+    public int getWyswietleniaTydzien() {
+        return wyswietleniaTydzien;
+    }
+
+    public ArrayList getWyswietlenia() {
+        return wyswietlenia;
+    }
+
+    public Dystrybutor getDystrybutor() {
+        return dystrybutor;
+    }
+
     private ArrayList<String> listaAktorow;
      double cena;
     private int wyswietleniaTydzien;

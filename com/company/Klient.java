@@ -23,6 +23,34 @@ public class Klient extends Thread implements Serializable {
         return "Klient{" + "nazwa=" + nazwa + ", dataUrodzenia=" + dataUrodzenia + ", email=" + email + ", nrKarty=" + nrKarty + ", abonament=" + abonament + ", waznoscAbonamentu=" + waznoscAbonamentu + '}';
     }
 
+    public String getNazwa() {
+        return nazwa;
+    }
+
+    public ArrayList getDataUrodzenia() {
+        return dataUrodzenia;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getNrKarty() {
+        return nrKarty;
+    }
+
+    public Systemik getSystemik() {
+        return systemik;
+    }
+
+    public Abonament getAbonament() {
+        return abonament;
+    }
+
+    public int getWaznoscAbonamentu() {
+        return waznoscAbonamentu;
+    }
+
     public Klient(Systemik systemik){
         this.systemik=systemik;
         Random generator = new Random();

@@ -7,6 +7,9 @@ public class  Umowa implements Serializable {
     private int zyski;
     private int odtworzenia;
 
+    public String getTyp() {
+        return typ;
+    }
 
     public Umowa(){
         Random generator= new Random();

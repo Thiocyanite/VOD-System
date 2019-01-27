@@ -10,6 +10,10 @@ public class Abonament implements Serializable {
     private int urzadzenia;
     private String rozdzielczosc;
 
+    public String getTyp() {
+        return typ;
+    }
+
     @Override
     public String toString() {
         return "Abonament{" + "typ=" + typ + ", cena=" + cena + ", urzadzenia=" + urzadzenia + ", rozdzielczosc=" + rozdzielczosc + '}';

@@ -6,9 +6,34 @@ public class LiveStream implements Serializable {
     private String nazwa;
     private double cena;
     private int data;
+
+    public int getWyswietlenia() {
+        return wyswietlenia;
+    }
+
     private int wyswietlenia;
     private Dystrybutor dystrybutor;
     private Promocja aktualnaPromocja;
+
+    public String getNazwa() {
+        return nazwa;
+    }
+
+    public double getCena() {
+        return cena;
+    }
+
+    public int getData() {
+        return data;
+    }
+
+    public Dystrybutor getDystrybutor() {
+        return dystrybutor;
+    }
+
+    public Promocja getAktualnaPromocja() {
+        return aktualnaPromocja;
+    }
 
     public LiveStream(int data, Dystrybutor dystrybutor) {
         Random generator = new Random();
