@@ -116,7 +116,7 @@ public class Controller {
         symulacja.zapis();
     }
 
-    public void laduj(){
+    public void odczyt(){
         symulacja.odczyt();
     }
 

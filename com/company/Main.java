@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class Main extends Application {
     private Scene scenaGlowna, bankrut, scenaBoczna;
@@ -19,6 +21,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
     zaladujSceneGlowna();
     noweOknoGlowne(primaryStage);
     }
@@ -44,7 +47,8 @@ public class Main extends Application {
 
     private void zaladujSceneGlowna(){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("gui1.fxml"));
+
+            Parent root = FXMLLoader.load(getClass().getResource("helpme.fxml"));
             scenaGlowna = new Scene(root, 600,400);
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,6 +57,7 @@ public class Main extends Application {
 
     private void zaladujBankruta(){
         try {
+            ResourceBundle resources = ResourceBundle.getBundle("/");;
             Parent bankrucik = FXMLLoader.load(getClass().getResource("end.fxml"));
             bankrut=new Scene(bankrucik,400,400);
         } catch (IOException e) {
@@ -62,6 +67,7 @@ public class Main extends Application {
 
     private void zaladujOgladane(){
         try {
+            ResourceBundle resources = ResourceBundle.getBundle("/");;
             Parent dodatkowy = FXMLLoader.load(getClass().getResource("ogladane.fxml"));
             scenaBoczna=new Scene(dodatkowy,600,400);
         } catch (IOException e) {
@@ -71,6 +77,7 @@ public class Main extends Application {
 
     private void zaladujLive(){
         try {
+            ResourceBundle resources = ResourceBundle.getBundle("/");;
             Parent dodatkowy = FXMLLoader.load(getClass().getResource("live.fxml"));
             scenaBoczna=new Scene(dodatkowy,600,400);
         } catch (IOException e) {
@@ -81,6 +88,7 @@ public class Main extends Application {
 
     private void zaladujDystrybutora(){
         try {
+            ResourceBundle resources = ResourceBundle.getBundle("/");;
             Parent dodatkowy = FXMLLoader.load(getClass().getResource("dystry.fxml"));
             scenaBoczna=new Scene(dodatkowy,600,400);
         } catch (IOException e) {
@@ -90,6 +98,7 @@ public class Main extends Application {
 
     private void zaladujUzyszkodnika(){
         try {
+            ResourceBundle resources = ResourceBundle.getBundle("/");;
             Parent dodatkowy = FXMLLoader.load(getClass().getResource("user.fxml"));
             scenaBoczna=new Scene(dodatkowy,600,400);
         } catch (IOException e) {
