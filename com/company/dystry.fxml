@@ -22,17 +22,17 @@
             <Font name="Zapfino" size="24.0" />
          </font>
       </Label>
-      <Text layoutX="335.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%abonament">
+      <Text fx:id="abonament" layoutX="335.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%abonament">
          <font>
             <Font name="Zapfino" size="24.0" />
          </font>
       </Text>
-      <Text layoutX="335.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%stanKonta">
+      <Text fx:id="zyski" layoutX="335.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%stanKonta">
          <font>
             <Font name="Zapfino" size="24.0" />
          </font>
       </Text>
-      <Text layoutX="342.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nazwa">
+      <Text fx:id="nazwa" layoutX="342.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nazwa">
          <font>
             <Font name="Zapfino" size="24.0" />
          </font>

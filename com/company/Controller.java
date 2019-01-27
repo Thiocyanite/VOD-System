@@ -24,14 +24,32 @@ import static com.company.Main.symulacja;
 public class Controller {
 
     @FXML
-    private Text stanKonta, niebezpieczenstwo, tydzien;
+    private Text stanKonta;
+    @FXML
+    private Text niebezpieczenstwo;
+    @FXML
+    private Text tydzien;
 
     @FXML
-    private Text nazwa, gatunek, rokProdukcji, ocena;
+    private Text nazwa;
     @FXML
-    private Text cena, nrKarty, eMail, abonament;
+    private Text gatunek;
     @FXML
-    private Text data, zyski;
+    private Text rokProdukcji;
+    @FXML
+    private Text ocena;
+    @FXML
+    private Text cena;
+    @FXML
+    private Text nrKarty;
+    @FXML
+    private Text eMail;
+    @FXML
+    private Text abonament;
+    @FXML
+    private Text data;
+    @FXML
+    private Text zyski;
     @FXML
     private Text dystrybutor;
 
@@ -92,6 +110,22 @@ public class Controller {
             abonament.setText(klient.getAbonament().getTyp());
        else abonament.setText("Niewykupiony");
 
+    }
+
+    public void zapisz(){
+        symulacja.zapis();
+    }
+
+    public void laduj(){
+        symulacja.odczyt();
+    }
+
+    public void tydzienn(){
+        symulacja.tydzien();
+    }
+
+    public void dodajDystrybutora(){
+        symulacja.dodajDystrybutora();
     }
 
     public void wyswietlDystrybutora(Dystrybutor dystrybutor){

@@ -34,22 +34,22 @@
             <Font name="Zapfino" size="13.0" />
          </font>
       </Label>
-      <Text layoutX="158.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%dystrybutor">
+      <Text fx:id="dystrybutor" layoutX="158.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%dystrybutor">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="158.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%data">
+      <Text fx:id="data" layoutX="158.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%data">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="158.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nazwa">
+      <Text fx:id="nazwa" layoutX="158.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nazwa">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="168.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%cena">
+      <Text fx:id="cena" layoutX="168.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%cena">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>

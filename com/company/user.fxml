@@ -32,27 +32,27 @@
             <Font name="Zapfino" size="14.0" />
          </font>
       </Label>
-      <Text layoutX="315.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nazwa">
+      <Text fx:id="nazwa" layoutX="315.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nazwa">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="315.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%data">
+      <Text fx:id="data" layoutX="315.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%data">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="321.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%eMail">
+      <Text fx:id="eMail" layoutX="321.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%eMail">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="332.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nrKarty">
+      <Text fx:id="nrKarty" layoutX="332.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nrKarty">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="341.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%abonament">
+      <Text fx:id="abonament" layoutX="341.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%abonament">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>

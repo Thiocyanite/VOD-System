@@ -58,32 +58,32 @@
             <Image url="@Unknown.jpeg" />
          </image>
       </ImageView>
-      <Text layoutX="221.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nazwa">
+      <Text fx:id="nazwa" layoutX="221.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%nazwa">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="221.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%gatunek">
+      <Text fx:id="gatunek" layoutX="221.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%gatunek">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="221.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%rokProdukcji">
+      <Text fx:id="rokProdukcji" layoutX="221.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%rokProdukcji">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="228.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%dystrybutor">
+      <Text fx:id="dystrybutor" layoutX="228.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%dystrybutor">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="233.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%cena">
+      <Text fx:id="cena" layoutX="233.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%cena">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="239.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%coena" wrappingWidth="76.86249925754964">
+      <Text fx:id="ocena" layoutX="239.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%coena" wrappingWidth="76.86249925754964">
          <font>
             <Font name="Zapfino" size="13.0" />
          </font>
