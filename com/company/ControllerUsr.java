@@ -14,6 +14,13 @@ public class ControllerUsr {
     @FXML
     private Text abonament;
 
+    private Klient klient;
+
+    public void initialize(Klient klient){
+    this.klient=klient;
+    }
+
+
     public void wyswietlUzyszkodnika(Klient klient){
         nazwa.setText(klient.getNazwa());
         eMail.setText(klient.getEmail());

@@ -11,7 +11,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Main extends Application {
-    private Scene scenaGlowna, scenaBoczna;
+    private Scene scenaGlowna;
     static  Symulacja symulacja;
 
     public static void main(String[] args) {
@@ -31,13 +31,9 @@ public class Main extends Application {
         okno.setTitle("Symulator systemu VOD");
         okno.setScene(scenaGlowna);
         okno.show();
+
     }
 
-    private void noweOknoBoczne(Stage okno){
-        okno.setTitle("Przegladaj dane systemu");
-        okno.setScene(scenaBoczna);
-        okno.show();
-    }
 
 
     private void zaladujSceneGlowna(){
@@ -50,49 +46,6 @@ public class Main extends Application {
         }
     }
 
-
-
-    private void zaladujOgladane(){
-        try {
-            ResourceBundle resources = ResourceBundle.getBundle("/");;
-            Parent dodatkowy = FXMLLoader.load(getClass().getResource("ogladane.fxml"));
-            scenaBoczna=new Scene(dodatkowy,600,400);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void zaladujLive(){
-        try {
-            ResourceBundle resources = ResourceBundle.getBundle("/");;
-            Parent dodatkowy = FXMLLoader.load(getClass().getResource("live.fxml"));
-            scenaBoczna=new Scene(dodatkowy,600,400);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    private void zaladujDystrybutora(){
-        try {
-            ResourceBundle resources = ResourceBundle.getBundle("/");;
-            Parent dodatkowy = FXMLLoader.load(getClass().getResource("dystry.fxml"));
-            scenaBoczna=new Scene(dodatkowy,600,400);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void zaladujUzyszkodnika(){
-        try {
-            ResourceBundle resources = ResourceBundle.getBundle("/");;
-            Parent dodatkowy = FXMLLoader.load(getClass().getResource("user.fxml"));
-            scenaBoczna=new Scene(dodatkowy,600,400);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 
 
 

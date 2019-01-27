@@ -18,6 +18,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import sun.awt.SunHints;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,7 +28,11 @@ import static com.company.Main.symulacja;
 
 
 public class Controller {
-    private Scene bankrut;
+    private Scene bankrut, scenaBoczna;
+    ControllerLiv cl;
+    ControllerOgldn og;
+    ControllerUsr us;
+    ControllerDystr dy;
 
     @FXML
     private Text stanKonta;
@@ -54,7 +59,11 @@ public class Controller {
     volatile private ListProperty<Klient> listaUzyszkodnikowProperty = new SimpleListProperty<>();
 
 
-    public Controller(){}
+    public Controller(){
+
+    }
+
+
 
     public void initialize(){
         listaDystrybutorow.itemsProperty().bind(listaDystrybutorowProperty);
@@ -68,6 +77,37 @@ public class Controller {
 
         listaUzyszkodnikow.itemsProperty().bind(listaUzyszkodnikowProperty);
         listaUzyszkodnikowProperty.set(symulacja.vod.uzyskodniki);
+
+        listaUzyszkodnikow.getSelectionModel().selectedItemProperty()
+                .addListener((observable, oldValue, newValue) -> {
+                    zaladujUzyszkodnika();
+                    us.initialize(newValue);
+                    Stage sc= new Stage();
+                    noweOknoBoczne(sc);
+                });
+        listaOgladanych.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->{
+            zaladujOgladane();
+            og.initialize(newValue);
+            Stage sc=new Stage();
+            noweOknoBoczne(sc);
+        });
+
+        listaLivow.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->{
+            zaladujLive();
+            cl.initialize(newValue);
+            Stage sc=new Stage();
+            noweOknoBoczne(sc);
+        });
+
+        listaDystrybutorow.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->{
+            zaladujDystrybutora();
+            dy.initialize(newValue);
+            Stage sc=new Stage();
+            noweOknoBoczne(sc);
+        });
+
+
+
     }
 
 
@@ -105,6 +145,13 @@ public class Controller {
 
 
 
+    private void noweOknoBoczne(Stage okno){
+        okno.setTitle("Przegladaj dane systemu");
+        okno.setScene(scenaBoczna);
+        okno.show();
+    }
+
+
     private void noweOknoBankructwa(Stage okno){
         okno.setTitle("Nie udalo sie, system zbankrutowal");
         okno.setScene(bankrut);
@@ -113,11 +160,53 @@ public class Controller {
 
     private void zaladujBankruta(){
         try {
-            ResourceBundle resources = ResourceBundle.getBundle("/");;
             Parent bankrucik = FXMLLoader.load(getClass().getResource("end.fxml"));
             bankrut=new Scene(bankrucik,400,400);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
+    private void zaladujOgladane(){
+        try {
+            Parent dodatkowy = FXMLLoader.load(getClass().getResource("ogladane.fxml"));
+            scenaBoczna=new Scene(dodatkowy,600,400);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void zaladujLive(){
+        try {
+            Parent dodatkowy = FXMLLoader.load(getClass().getResource("live.fxml"));
+            scenaBoczna=new Scene(dodatkowy,600,400);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void zaladujDystrybutora(){
+        try {
+
+            Parent dodatkowy = FXMLLoader.load(getClass().getResource("dystry.fxml"));
+            scenaBoczna=new Scene(dodatkowy,600,400);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void zaladujUzyszkodnika(){
+        try {
+
+            Parent dodatkowy = FXMLLoader.load(getClass().getResource("user.fxml"));
+            scenaBoczna=new Scene(dodatkowy,600,400);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 }

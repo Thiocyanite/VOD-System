@@ -19,6 +19,11 @@ public class ControllerOgldn {
     @FXML
     private Text dystrybutor;
 
+    private Ogladadlo ogladadlo;
+
+    public void initialize(Ogladadlo ogladadlo){
+        this.ogladadlo=ogladadlo;
+    }
 
     public void wyswietlOgladane(Ogladadlo ogladadlo){
         nazwa.setText(ogladadlo.getNazwa());

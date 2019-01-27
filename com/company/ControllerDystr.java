@@ -13,6 +13,11 @@ public class ControllerDystr {
     @FXML
     private Text zyski;
 
+    private Dystrybutor dystrybutor;
+
+    public void initialize(Dystrybutor dystrybutor){
+        this.dystrybutor=dystrybutor;
+    }
 
     public void wyswietlDystrybutora(Dystrybutor dystrybutor){
         nazwa.setText(dystrybutor.getNazwa());

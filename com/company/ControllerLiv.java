@@ -17,6 +17,11 @@ public class ControllerLiv {
     @FXML
     private Text dystrybutor;
 
+    private LiveStream live;
+
+    public void initialize(LiveStream live){
+        this.live=live;
+    }
 
     public void wyswietlLive(LiveStream live){
         nazwa.setText(live.getNazwa());
