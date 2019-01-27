@@ -16,7 +16,7 @@
       <items>
         <AnchorPane prefHeight="584.0" prefWidth="185.0" style="-fx-background-color: #000000;">
           <children>
-                  <Button layoutX="24.0" layoutY="70.0" mnemonicParsing="false" onAction="#tydzienn" prefHeight="32.0" prefWidth="129.0" rotate="-23.6" style="-fx-background-color: #800080#800080; -fx-font: Zapfino;" text="Następny tydzień">
+                  <Button layoutX="24.0" layoutY="70.0" mnemonicParsing="false" onAction="#tydzienn" prefHeight="32.0" prefWidth="129.0" rotate="-23.6" style="-fx-background-color: #800080#800080; " text="Następny tydzień">
                      <font>
                         <Font name="Zapfino" size="14.0" />
                      </font>
@@ -50,10 +50,7 @@
         </AnchorPane>
       <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="600.0" prefWidth="443.0" style="-fx-background-color: #000000;">
         <children>
-                  <ListView fx:id="listaDystrybutorow" layoutX="15.0" layoutY="315.0" prefHeight="200.0" prefWidth="174.0" style="-fx-background-color: #800080;" />
-                  <ListView fx:id="listaOgladanych" layoutX="15.0" layoutY="76.0" prefHeight="200.0" prefWidth="174.0" style="-fx-background-color: #800080;" />
-                  <ListView fx:id="listaLivow" layoutX="222.0" layoutY="76.0" prefHeight="200.0" prefWidth="174.0" style="-fx-background-color: #800080;" />
-                  <ListView fx:id="listaUzyszkodnikow" layoutX="222.0" layoutY="315.0" prefHeight="200.0" prefWidth="174.0" style="-fx-background-color: #800080;" />
+
                   <Label layoutX="15.0" layoutY="53.0" prefHeight="23.0" prefWidth="174.0" style="-fx-background-color: #800080; -fx-text-fill: #ffffff;" text="Nasze filmy i seriale" />
                   <Label layoutX="15.0" layoutY="292.0" prefHeight="23.0" prefWidth="174.0" style="-fx-background-color: #800080; -fx-text-fill: #ffffff;" text="Nasi dystrybutorzy" />
                   <Label layoutX="223.0" layoutY="53.0" prefHeight="23.0" prefWidth="174.0" style="-fx-background-color: #800080; -fx-text-fill: #ffffff;" text="Nasze live'y" />
@@ -77,17 +74,17 @@
                         <Font name="Zapfino" size="20.0" />
                      </font>
                   </Label>
-                  <Text fx:id="tydzien" layoutX="106.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%tydzien">
+                  <Text fx:id="tydzien" layoutX="106.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="tydzien">
                      <font>
                         <Font name="Zapfino" size="18.0" />
                      </font>
                   </Text>
-                  <Text fx:id="stanKonta" layoutX="93.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%stanKonta">
+                  <Text fx:id="stanKonta" layoutX="93.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="stanKonta">
                      <font>
                         <Font name="Zapfino" size="18.0" />
                      </font>
                   </Text>
-                  <Text fx:id="niebezpieczenstwo" layoutX="68.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="%niebezpieczenstwo">
+                  <Text fx:id="niebezpieczenstwo" layoutX="68.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="niebezpieczenstwo">
                      <font>
                         <Font name="Zapfino" size="18.0" />
                      </font>

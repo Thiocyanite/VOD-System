@@ -3,6 +3,9 @@ package com.company;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.text.Text;
 
 import javafx.beans.property.ListProperty;
@@ -14,7 +17,9 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
@@ -22,6 +27,7 @@ import static com.company.Main.symulacja;
 
 
 public class Controller {
+    private Scene bankrut;
 
     @FXML
     private Text stanKonta;
@@ -30,43 +36,21 @@ public class Controller {
     @FXML
     private Text tydzien;
 
-    @FXML
-    private Text nazwa;
-    @FXML
-    private Text gatunek;
-    @FXML
-    private Text rokProdukcji;
-    @FXML
-    private Text ocena;
-    @FXML
-    private Text cena;
-    @FXML
-    private Text nrKarty;
-    @FXML
-    private Text eMail;
-    @FXML
-    private Text abonament;
-    @FXML
-    private Text data;
-    @FXML
-    private Text zyski;
-    @FXML
-    private Text dystrybutor;
 
     @FXML
-    volatile  private ListView listaOgladanych = new ListView();
+    volatile  private ListView<Ogladadlo> listaOgladanych = new ListView();
     volatile private ListProperty<Ogladadlo> listaOgladanychProperty = new SimpleListProperty<>();
 
     @FXML
-    volatile private ListView listaLivow = new ListView();
+    volatile private ListView<LiveStream> listaLivow = new ListView();
     volatile private ListProperty<LiveStream> listaLivowProperty = new SimpleListProperty<>();
 
     @FXML
-    volatile private ListView listaDystrybutorow = new ListView();
+    volatile private ListView<Dystrybutor> listaDystrybutorow = new ListView();
     volatile private ListProperty<Dystrybutor> listaDystrybutorowProperty = new SimpleListProperty<>();
 
     @FXML
-    volatile private ListView listaUzyszkodnikow = new ListView();
+    volatile private ListView<Klient> listaUzyszkodnikow = new ListView();
     volatile private ListProperty<Klient> listaUzyszkodnikowProperty = new SimpleListProperty<>();
 
 
@@ -98,6 +82,7 @@ public class Controller {
 
     public void tydzienn(){
         symulacja.tydzien();
+        aktualizuj(symulacja);
     }
 
     public void dodajDystrybutora(){
@@ -110,5 +95,29 @@ public class Controller {
         tydzien.setText(Integer.toString(symulacja.getTydzien()));
         stanKonta.setText(Double.toString(symulacja.getStanKonta()));
         niebezpieczenstwo.setText(Integer.toString(symulacja.getUwaga()));
+        if (symulacja.getUwaga()==3){
+            Stage end =new Stage();
+            zaladujBankruta();
+            noweOknoBankructwa(end);
+        }
+
+    }
+
+
+
+    private void noweOknoBankructwa(Stage okno){
+        okno.setTitle("Nie udalo sie, system zbankrutowal");
+        okno.setScene(bankrut);
+        okno.show();
+    }
+
+    private void zaladujBankruta(){
+        try {
+            ResourceBundle resources = ResourceBundle.getBundle("/");;
+            Parent bankrucik = FXMLLoader.load(getClass().getResource("end.fxml"));
+            bankrut=new Scene(bankrucik,400,400);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

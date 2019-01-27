@@ -11,7 +11,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Main extends Application {
-    private Scene scenaGlowna, bankrut, scenaBoczna;
+    private Scene scenaGlowna, scenaBoczna;
     static  Symulacja symulacja;
 
     public static void main(String[] args) {
@@ -39,11 +39,6 @@ public class Main extends Application {
         okno.show();
     }
 
-    private void noweOknoBankructwa(Stage okno){
-        okno.setTitle("Nie udalo sie, system zbankrutowal");
-        okno.setScene(bankrut);
-        okno.show();
-    }
 
     private void zaladujSceneGlowna(){
         try {
@@ -55,15 +50,7 @@ public class Main extends Application {
         }
     }
 
-    private void zaladujBankruta(){
-        try {
-            ResourceBundle resources = ResourceBundle.getBundle("/");;
-            Parent bankrucik = FXMLLoader.load(getClass().getResource("end.fxml"));
-            bankrut=new Scene(bankrucik,400,400);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 
     private void zaladujOgladane(){
         try {
