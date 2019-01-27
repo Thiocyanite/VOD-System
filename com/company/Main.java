@@ -13,9 +13,8 @@ public class Main extends Application {
     static  Symulacja symulacja;
 
     public static void main(String[] args) {
-
     symulacja = new Symulacja();
-
+    launch(args);
     }
 
     @Override
