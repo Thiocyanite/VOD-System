@@ -206,16 +206,25 @@ public class Ogladadlo implements Serializable {
         listaAktorow.add("Johny Depp");
     }
 
+    /**
+     *
+     * @return cena produktu
+     */
     public double getCena(){
         return this.cena;
     }
 
+    /**
+     * zwiększenie ilości wyświetleń
+     */
     public void dodajwyswietlenie(){
         synchronized (this) {wyswietleniaTydzien=wyswietleniaTydzien+1;}
     }
 
 
-
+    /**
+     * dodawanie wyświetleń z tego tygodnia do listy wyświetleń
+     */
     public void zmianaTygodnia(){
         wyswietlenia.add(wyswietleniaTydzien);
         dystrybutor.aktualnaUmowa.dodajodtworzenia(wyswietleniaTydzien);

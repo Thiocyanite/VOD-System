@@ -17,6 +17,9 @@ public class sezon implements Serializable {
         this.dodajodcinek();
     }
 
+    /**
+     * Dodanie nowego odcinka
+     */
     public void dodajodcinek(){
         odcinek pom = new odcinek();
         odcinki.add(pom);

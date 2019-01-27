@@ -7,6 +7,7 @@ public class  Umowa implements Serializable {
     private int zyski;
     private int odtworzenia;
 
+
     public Umowa(){
         Random generator= new Random();
         odtworzenia=0;
@@ -21,6 +22,10 @@ public class  Umowa implements Serializable {
             zyski=6;
     }
 
+    /**
+     * Ile pieniędzy należy oddać
+     * @return okrutnie zabrane pieniądze
+     */
     public  int wyplac(){
         if (typ=="Ryczalt")
             return zyski;

@@ -31,12 +31,20 @@ public class Film extends Ogladadlo implements Serializable{
         aktualnaPromocja=null;
     }
 
+    /**
+     *
+     * @return cena liczona z aktualną promoją
+     */
     public double getcena(){
         if (aktualnaPromocja==null)
                 return this.cena;
         return this.cena*(1-aktualnaPromocja.getUpust());
     }
 
+    /**
+     * generowanie filmu o losowych parametrach
+     * @param dystrybutor twórca filmu
+     */
     public Film(Dystrybutor dystrybutor){
         super(dystrybutor);
         Random generator= new Random();

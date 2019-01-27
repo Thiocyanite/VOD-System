@@ -87,24 +87,41 @@ public class LiveStream implements Serializable {
     }
 
 
+    /**
+     * dodaje promocję do wydarzenia
+     * @param tyg aktualny tydzień
+     */
     public void dodajPromocje(int tyg){
         aktualnaPromocja=new Promocja(tyg);
     }
 
+    /**
+     * usuwa promocję
+     */
     public void usunPromocje(){
         aktualnaPromocja=null;
     }
 
+    /**
+     *  zwraca cenę
+     * @return cena
+     */
     public double getcena(){
         if (aktualnaPromocja==null)
             return this.cena;
         return this.cena*(1-aktualnaPromocja.getUpust());
     }
 
+    /**
+     * zwiększenie ilości wyświetleń
+     */
     public void dodajWyswietlenia(){
         wyswietlenia++;
     }
 
+    /**
+     * dodaje dystrybutorowi wyświetlenia - ważne przy płaceniu za obejrzenie
+     */
     public void wyswietlenia(){
         dystrybutor.aktualnaUmowa.dodajodtworzenia(wyswietlenia);
     }

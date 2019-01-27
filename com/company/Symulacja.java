@@ -33,14 +33,20 @@ public class Symulacja implements Serializable {
 
     }
 
-    public void dodajDystrybutora(String nazwa){
-        Dystrybutor nowy =new Dystrybutor(vod,nazwa);
+    /**
+     * Tworzenie nowego dystrybutora
+     */
+    public void dodajDystrybutora(){
+        Dystrybutor nowy =new Dystrybutor(vod);
 
         vod.dystrybutorzy.add(nowy);
 
 
     }
 
+    /**
+     * Odczytanie stanu symulacji
+     */
     public void odczyt(){
         String nazwaPliku="ser.txt";
 
@@ -60,6 +66,9 @@ public class Symulacja implements Serializable {
     }
 
 
+    /**
+     * Zapisanie stanu symulacji
+     */
     public void zapis(){
         String nazwaPliku="ser.txt";
         try {
@@ -76,6 +85,16 @@ public class Symulacja implements Serializable {
 
 
 
+    public int getTydzien(){
+        return vod.tydzien;
+    }
+
+    public double getStanKonta(){
+        return vod.getStanKonta();
+    }
+    public int getUwaga(){
+        return uwaga;
+    }
 
     public String toString(){
         return vod.toString();

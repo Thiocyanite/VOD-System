@@ -2,6 +2,8 @@ package com.company;
 import java.io.Serializable;
 import java.util.Random;
 
+
+
 public class Abonament implements Serializable {
     private String typ;
     private double cena;
@@ -13,6 +15,9 @@ public class Abonament implements Serializable {
         return "Abonament{" + "typ=" + typ + ", cena=" + cena + ", urzadzenia=" + urzadzenia + ", rozdzielczosc=" + rozdzielczosc + '}';
     }
 
+    /**
+     * Konstruktor tworzy jeden z trzech możliwych typów abonamentu
+     */
 
     public Abonament(){
         Random generator =new Random();
@@ -36,6 +41,10 @@ public class Abonament implements Serializable {
         }
     }
 
+    /**
+     *
+     * @return cena danego abonamentu
+     */
     public double getCena() {
         return cena;
     }

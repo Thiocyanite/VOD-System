@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <LineChart layoutX="361.0" layoutY="210.0" prefHeight="183.0" prefWidth="210.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Label layoutX="14.0" prefHeight="70.0" prefWidth="130.0" style="-fx-text-fill: #ffffff;" text="Nazwa:">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="39.0" prefHeight="70.0" prefWidth="130.0" style="-fx-text-fill: #ffffff;" text="Gatunek:">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="86.0" prefHeight="70.0" prefWidth="130.0" style="-fx-text-fill: #ffffff;" text="Rok produkcji:">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="133.0" prefHeight="70.0" prefWidth="130.0" style="-fx-text-fill: #ffffff;" text="Dystrybutor:">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="210.0" prefHeight="70.0" prefWidth="130.0" style="-fx-text-fill: #ffffff;" text="Ocena:">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="175.0" prefHeight="70.0" prefWidth="130.0" style="-fx-text-fill: #ffffff;" text="Cena:">
+         <font>
+            <Font name="Zapfino" size="13.0" />
+         </font>
+      </Label>
+      <ListView layoutX="18.0" layoutY="258.0" prefHeight="128.0" prefWidth="130.0" style="-fx-background-color: #800080;" />
+      <ListView layoutX="170.0" layoutY="258.0" prefHeight="128.0" prefWidth="130.0" style="-fx-background-color: #800080;" />
+      <ImageView fitHeight="196.0" fitWidth="116.0" layoutX="415.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Unknown.jpeg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

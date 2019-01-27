@@ -39,17 +39,27 @@ public class Klient extends Thread implements Serializable {
 
     }
 
+    /**
+     * zakup abonamentu
+     */
     public void kupAbonament(){
         if (abonament==null) {
             abonament=new Abonament();
             systemik.wplac(abonament.getCena());
             waznoscAbonamentu=4;}
     }
+
+    /**
+     * zmniejszanie czasu ważności abonamentu o tydzień
+     */
     public void tygodniuj(){
         if (waznoscAbonamentu>0)
             waznoscAbonamentu--;
     }
 
+    /**
+     * generowanie losowych obejrzeń
+     */
     public void run(){
         while (true) {
             Random generator = new Random();

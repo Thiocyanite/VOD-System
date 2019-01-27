@@ -1,15 +1,18 @@
 package com.company;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
 
 public class Systemik extends Thread implements Serializable {
-     ArrayList<Klient> uzyskodniki;
-     ArrayList<Dystrybutor> dystrybutorzy;
-     ArrayList<Ogladadlo> ogladane;
-     ArrayList<LiveStream> live;
+     transient ObservableList<Klient> uzyskodniki= FXCollections.observableArrayList();
+     transient ObservableList<Dystrybutor> dystrybutorzy= FXCollections.observableArrayList();
+     transient ObservableList<Ogladadlo> ogladane= FXCollections.observableArrayList();
+     transient ObservableList<LiveStream> live= FXCollections.observableArrayList();
     private double stanKonta;
     private double saldo;
     double saldoPoMiesiacu;
@@ -18,25 +21,32 @@ public class Systemik extends Thread implements Serializable {
 
     public Systemik(Symulacja symulacja){
         this.symulacja=symulacja;
-        uzyskodniki=new ArrayList();
-        dystrybutorzy=new ArrayList<>();
-        ogladane=new ArrayList<>();
-        live=new ArrayList<>();
         stanKonta=0;
         saldo=0;
         tydzien=0;
     }
 
+    /**
+     * Odbieranie nam pieniążków :(
+     * @param zabrane ile pieniędzy zabrano
+     */
     public void wyplac(double zabrane){
         stanKonta-=zabrane;
         saldo-=zabrane;
     }
 
+    /**
+     * Dostajemy pieniądze :) :)
+     * @param zysk ile pieniędzy zarobione
+     */
     public void wplac(double zysk){
         stanKonta+=zysk;
         saldo+=zysk;
     }
 
+    /**
+     * tygodniowe rozliczenia: rozliczenia użytkowników i dystrybutorów, usuwanie przedawnionych wydarzeń etc
+     */
     public void tydzien(){
         try {
             symulacja.pisarz.acquire();
@@ -77,6 +87,10 @@ public class Systemik extends Thread implements Serializable {
         } catch (InterruptedException e) {
         e.printStackTrace();
     }
+    }
+
+    public double getStanKonta(){
+        return stanKonta;
     }
 
     @Override

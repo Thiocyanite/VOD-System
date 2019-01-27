@@ -16,10 +16,19 @@ public class Promocja implements Serializable {
         upust=(5+generator.nextInt(45))*0.01;
     }
 
+
+    /**
+     * wyświetl upust
+     * @return upust
+     */
     public double getUpust(){
         return upust;
     }
 
+    /**
+     * zwróć tydzień zakończenia promocji
+     * @return koniec promocji
+     */
     public int getKoniec(){
         return tydzienZakonczenia;
     }

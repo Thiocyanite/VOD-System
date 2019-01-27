@@ -31,6 +31,9 @@ public class Serial extends Ogladadlo implements Serializable {
         odcinkiSpecjalne=new ArrayList<>();
     }
 
+    /**
+     * dodawanie nowego sezonu
+     */
     public void dodajsezon(){
         Random generator = new Random();
         sezon sez = new sezon();
@@ -41,6 +44,9 @@ public class Serial extends Ogladadlo implements Serializable {
         sezony.add(sez);
     }
 
+    /**
+     * dodanie odcinka specjalnego
+     */
     public void dodajspecjala(){
         odcinek odc = new odcinek();
         odcinkiSpecjalne.add(odc);

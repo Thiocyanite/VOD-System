@@ -11,12 +11,19 @@ public class Dystrybutor extends Thread implements Serializable {
      Umowa aktualnaUmowa;
     private int czasDoNowejUmowy;
     private String nazwa;
+    private int zarobione;
     Systemik systemik;
 
 
+    /**
+     *
+     * @param systemik system VOD
 
-    public Dystrybutor(Systemik systemik, String nazwa){
-        this.nazwa=nazwa;
+     */
+    public Dystrybutor(Systemik systemik){
+        zarobione=0;
+        Random generator = new Random();
+        this.nazwa="Studio "+generator.nextInt(90);
         this.systemik=systemik;
         systemik.dystrybutorzy.add(this);
         czasDoNowejUmowy=4;
@@ -24,22 +31,41 @@ public class Dystrybutor extends Thread implements Serializable {
         this.start();
     }
 
+    /**
+     *
+     * @return nazwa dystrybutora
+     */
+    public String getNazwa(){
+        return nazwa;
+    }
+    /**
+     * tworzenie nowego filmu i dodanie go do systemu
+     */
     public void wyprodukujFilm(){
         Film nowProdukcja = new Film(this);
         systemik.ogladane.add(nowProdukcja);
     }
 
+    /**
+     * tworzenie nowego serialu i dodanie go do systemu
+     */
     public void wyprodukujSerial(){
         Serial nowaProdukcja=new Serial(this);
         systemik.ogladane.add(nowaProdukcja);
     }
 
+    /**
+     * nie zamierzam tego tłumaczyć
+     */
     public void wyprodukujLive(){
-        LiveStream nowaProdukcja=new LiveStream(9 ,this);
+        LiveStream nowaProdukcja=new LiveStream(systemik.tydzien,this);
         systemik.live.add(nowaProdukcja);
     }
 
 
+    /**
+     * utworzony dystrybutor bierze się do pracy i w losowym czasie coś dorzuca
+     */
     public void run(){
         Random generator = new Random();
         while (true){
@@ -69,9 +95,13 @@ public class Dystrybutor extends Thread implements Serializable {
     }
 
 
+    /**
+     * rozliczenie dystrybutora z systemem VOD
+     */
     public void rozliczenie(){
         if (czasDoNowejUmowy==0)
         {systemik.wyplac(aktualnaUmowa.wyplac());
+        zarobione+=aktualnaUmowa.wyplac();
             czasDoNowejUmowy=4;
             aktualnaUmowa=new Umowa();
         }
